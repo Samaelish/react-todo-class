@@ -1,42 +1,138 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* styles.css (или используйте CSS-in-JS) */
+
+/* Общие стили */
+.todo-list {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
   text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-family: 'Arial', sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Форма добавления */
+.todo-list form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.todo-list input[type='text'] {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #3498db;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.todo-list input[type='text']:focus {
+  outline: none;
+  border-color: #2980b9;
+}
+
+.todo-list button[type='submit'] {
+  padding: 12px 24px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.todo-list button[type='submit']:hover {
+  background: #2980b9;
+}
+
+/* Список задач */
+.todo-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.todo-list li:hover {
+  transform: translateX(5px);
+}
+
+.task-content {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.task-status {
+  font-size: 0.9em;
+  color: #7f8c8d;
+  margin-left: 0.5rem;
+}
+
+/* Кнопки действий */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-list button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.toggle-btn {
+  background: #2ecc71;
+  color: white;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: white;
+}
+
+.todo-list button:hover {
+  opacity: 0.9;
+}
+
+/* Состояние выполненной задачи */
+.completed {
+  text-decoration: line-through;
+  opacity: 0.7;
+  background: #ecf0f1;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+  .todo-list {
+    margin: 1rem;
+    padding: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .todo-list form {
+    flex-direction: column;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .actions {
+    flex-direction: column;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
